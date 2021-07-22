@@ -1,14 +1,17 @@
-django==3.2.4
 asgiref @ file:///tmp/build/80754af9/asgiref_1617740417847/work
+bcrypt==3.2.0
 brotlipy==0.7.0
 certifi==2021.5.30
 cffi @ file:///tmp/build/80754af9/cffi_1613246951236/work
 cryptography @ file:///tmp/build/80754af9/cryptography_1616767007030/work
 Django @ file:///tmp/build/80754af9/django_1622711766781/work
+Fabric3==1.14.post1
 gunicorn==20.1.0
 idna @ file:///tmp/build/80754af9/idna_1622654382723/work
+paramiko==2.7.2
 psycopg2 @ file:///tmp/build/80754af9/psycopg2_1612298595717/work
 pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+PyNaCl==1.4.0
 pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1608057966937/work
 PySocks @ file:///tmp/build/80754af9/pysocks_1605305812635/work
 pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
