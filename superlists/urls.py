@@ -16,8 +16,10 @@ Including another URLconf
 from django.urls import path, include
 from lists import views as list_view
 from lists import urls as list_urls
+from accounts import urls as account_urls
 
 urlpatterns = [
     path('', list_view.home_page, name='home'),
     path('lists/', include(list_urls)),
+    path('accounts/', include(account_urls)),
 ]

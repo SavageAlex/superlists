@@ -1,0 +1,47 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+_libgcc_mutex=0.1=main
+_openmp_mutex=4.5=1_gnu
+asgiref=3.3.4=pyhd3eb1b0_0
+bcrypt=3.2.0=pypi_0
+brotlipy=0.7.0=py39h27cfd23_1003
+ca-certificates=2021.5.25=h06a4308_1
+certifi=2021.5.30=py39h06a4308_0
+cffi=1.14.5=py39h261ae71_0
+cryptography=3.4.7=py39hd23ed53_0
+django=3.2.4=pyhd3eb1b0_0
+fabric3=1.14.post1=pypi_0
+gunicorn=20.1.0=pypi_0
+idna=3.2=pyhd3eb1b0_0
+krb5=1.17.1=h173b8e3_0
+ld_impl_linux-64=2.35.1=h7274673_9
+libedit=3.1.20210216=h27cfd23_1
+libffi=3.3=he6710b0_2
+libgcc-ng=9.3.0=h5101ec6_17
+libgomp=9.3.0=h5101ec6_17
+libpq=12.2=h20c2e04_0
+libstdcxx-ng=9.3.0=hd4cf53a_17
+ncurses=6.2=he6710b0_1
+openssl=1.1.1k=h27cfd23_0
+paramiko=2.7.2=pypi_0
+pip=21.1.2=py39h06a4308_0
+psycopg2=2.8.6=py39h3c74f83_1
+pycparser=2.20=py_2
+pynacl=1.4.0=pypi_0
+pyopenssl=20.0.1=pyhd3eb1b0_1
+pysocks=1.7.1=py39h06a4308_0
+python=3.9.5=h12debd9_4
+pytz=2021.1=pyhd3eb1b0_0
+readline=8.1=h27cfd23_0
+selenium=3.141.0=py39h27cfd23_1000
+setuptools=52.0.0=py39h06a4308_0
+six=1.16.0=pyhd3eb1b0_0
+sqlite=3.35.4=hdfb4753_0
+sqlparse=0.4.1=py_0
+tk=8.6.10=hbc83047_0
+tzdata=2020f=h52ac0ba_0
+urllib3=1.26.4=pyhd3eb1b0_0
+wheel=0.36.2=pyhd3eb1b0_0
+xz=5.2.5=h7b6447c_0
+zlib=1.2.11=h7b6447c_3
