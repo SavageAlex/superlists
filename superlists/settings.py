@@ -151,6 +151,6 @@ LOGGING = {
 
 EMAIL_HOST = 'authsmtp.securemail.pro'
 EMAIL_HOST_USER = 'smtp@devproject.site'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD') #  S@vageAlexVN2002
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
