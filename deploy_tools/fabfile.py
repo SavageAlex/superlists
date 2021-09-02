@@ -15,17 +15,18 @@ def _create_directory_structure_if_necessary(c, site_folder):
         c.run(f'mkdir -p {site_folder}/{subfolder}')
 
 def _get_latest_source(c, source_folder):
+    print(source_folder)
     if exists(c, source_folder + '/.git'):
         c.run(f'cd {source_folder} && git fetch')
     else:
         c.run(f'git clone {REPO_URL} {source_folder}')
     current_commit = c.local("git log -n 1 --format=%H") # current_commit = c.local("git log -n 1 --format=%H", capture=True)
-    c.run(f'cd {source_folder} && git reset --hard {current_commit}')
+    c.run(f'cd {source_folder} && git reset --hard {current_commit.stdout}')
 
 def _update_settings(c, source_folder, site_name):
     settings_path = source_folder + '/superlists/settings.py'
-    c.run(f'sed "s/DEBUG = True/DEBUG = False/g" {settings_path}')     # (settings_path, "DEBUG = True", "DEBUG = False") changed for: 'sed -i<backup> -r -e "/<limit>/ s/<before>/<after>/<flags>g" <filename>'
-    c.run(f'sed "s/ALLOWED_HOSTS =.+$/ALLOWED_HOSTS = ["{site_name}"]/g" {settings_path}')      # settings_path, 'ALLOWED_HOSTS =.+$', f'ALLOWED_HOSTS = ["{site_name}"]'
+    c.run(f'sed -i "s/DEBUG = True/DEBUG = False/g" {settings_path}', warn=True)     # (settings_path, "DEBUG = True", "DEBUG = False") changed for: 'sed -i<backup> -r -e "/<limit>/ s/<before>/<after>/<flags>g" <filename>'
+    c.run(f'sed -i -r -e "s/ALLOWED_HOSTS =.+$/ALLOWED_HOSTS = [\'{site_name}\']/g" {settings_path}', warn=True)
     secret_key_file = source_folder + '/superlists/secret_key.py'
     if not exists(c, secret_key_file):
         chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
@@ -53,7 +54,7 @@ def _update_database(c, source_folder):
 
 @task
 def deploy(ctx):
-    with Connection(ctx.host, connect_timeout=10, ) as conn:
+    with Connection(ctx.host) as conn:
 
         site_folder = f'/home/{conn.user}/sites/{conn.host}'
         source_folder = site_folder + '/source'
