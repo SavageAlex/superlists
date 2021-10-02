@@ -11,5 +11,6 @@ def reset_database(host):
 def create_session_on_server(host, email):
     manage_dot_py = _get_manage_dot_py(host)
     with Connection(f'ubuntu@{host}') as c:
-        session_key = c.run(f'{manage_dot_py} create_session {email}')
+        result = c.run(f'{manage_dot_py} create_session {email}')
+        session_key = result.stdout
         return session_key.strip()
